@@ -9,17 +9,36 @@
 // import Exemplo9 from './components/Exemplo09Enviar.vue'
 //import UserCard from './components/Exemplo10Props.vue';
 //import UserCard from './components/Exercicio9.0.vue';
-import { ref } from 'vue';
-import Exemplo11Emits from './components/Exemplo11Emits.vue';
-const totalCliques = ref(0)
-
-function atualizarTotal(valor){
-    totalCliques.value = valor
-}
+// import ButtonComponent from './components/exercicios/Exercicio11.vue'
+import model from './components/exercicios/Exercicio12.vue'
+// import { ref } from 'vue';
+// import Exemplo11Emits from './components/Exemplo11Emits.vue';
+ import Card from './components/exercicios/Exercicio13.vue';
 
 </script>
 
 <template>
-   <Exemplo11Emits @update="atualizarTotal"></Exemplo11Emits>
-   <p>Total de cliques: {{ totalCliques }}</p>
+
+   <!-- <Exemplo11Emits @update="atualizarTotal"></Exemplo11Emits>
+   <p>Total de cliques: {{ totalCliques }}</p> -->
+   <!-- <ButtonComponent>Clique aqui</ButtonComponent> -->
+    <!-- <model>
+        <template #header>
+            <h2>Header Customizado.</h2>
+        </template>
+        <p>Conteúdo do modelo personalizado via slot padrão.</p>
+        <template #footer>
+            <p>Footer Customizado.</p>
+        </template>
+    </model> -->
+    <Card titulo="Meu Título" descricao="Minha Descrição">
+     <template #header>
+          <h2>Header Customizado</h2>
+     </template>
+     <p>Conteúdo do card personalizado via slot padrão.</p>
+     <template #footer>
+          <p>Footer Customizado</p>
+     </template>
+    </Card>
+        
 </template>
